@@ -1,0 +1,140 @@
+.text {
+  text-align: center;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-center p {
+  font-size: 20px;
+}
+
+.content-center h2 {
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.category-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 45px;
+}
+
+.category-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 5px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInLinks 1.5s ease-out forwards;
+  animation-delay: 0.3s;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.category-links a:hover {
+  color: #007bff;
+  transform: scale(1.1);
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.2s ease;
+}
+
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.furniture {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  min-width: 300px;
+}
+
+img {
+  padding-top: 20px;
+}
+
+.furniture-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.85);
+  animation: fadeInImages 1.8s ease-out forwards;
+  transition: transform 0.4s ease;
+}
+
+.furniture-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+@keyframes fadeInImages {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.all {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .furniture-image {
+    max-width: 100%;
+  }
+
+  .furniture {
+    justify-content: flex-start;
+  }
+}
+
+.detail {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 255, 255, 0.7);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 270px;
+  padding: 10px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.furniture-image:hover + .detail {
+  opacity: 1;
+}

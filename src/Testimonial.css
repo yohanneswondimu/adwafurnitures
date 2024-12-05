@@ -1,0 +1,123 @@
+/* Center the .testimonial container in the middle of the screen */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100vh; /* Full height of the viewport */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove padding */
+  text-align: center; /* Center text */
+}
+
+/* Optional: Style for the title */
+.testimonial h1 {
+  font-size: 2rem;
+  margin-bottom: 20px; /* Space below the title */
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards 0.5s; /* Fade-in animation for the title */
+}
+
+/* Ensure the slider itself takes full height of the screen */
+.slider {
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  position: relative;
+  overflow: hidden;
+  margin: 0; /* Ensure no extra margin */
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards 0.5s; /* Fade-in effect for the slider */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Center the image and text within the slider-content */
+.slider-content {
+  width: 400px; /* Fixed width for the container */
+  height: 400px; /* Fixed height for the container */
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  justify-content: center; /* Center vertically within the content */
+  align-items: center; /* Center horizontally within the content */
+  transition: transform 0.5s ease-in-out;
+  text-align: center; /* Center text within the container */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: add background to highlight the content */
+  border-radius: 10px; /* Optional: rounded corners */
+  padding: 20px;
+  margin: 0 auto; /* Center the slider content horizontally */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards; /* Fade-in effect for the slider content */
+}
+
+/* Animation for sliding content */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* When the content changes, animate the slider-content to slide in from the right */
+.slider-content.slide-in {
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Style the image */
+.slider-content img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards 0.7s; /* Fade-in animation for the image */
+}
+
+.testimonial-text {
+  text-align: center;
+  max-width: 350px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards 1s; /* Fade-in animation for the text */
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards 1.5s; /* Fade-in effect for the buttons */
+}
+
+.slider-button.prev-button {
+  left: 20px;
+}
+
+.slider-button.next-button {
+  right: 20px;
+}
+
+/* Button hover effect */
+.slider-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

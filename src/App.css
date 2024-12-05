@@ -1,0 +1,68 @@
+/* Global Body Styling */
+body {
+  background-color: #F6F3EB;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Section Styling */
+.section {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Animations */
+#hero.animate,
+#about.animate,
+#products.animate,
+#team.animate,
+#contact.animate,
+#footer.animate,
+#testimonial.animate {
+  animation: fadeInUp 1.5s ease-out 1;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer Styling */
+#footer {
+  margin: 0;
+  padding: 2px 0;
+  background-color: rgb(204, 112, 46);
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #products,
+  #testimonial {
+    opacity: 1;
+    transform: translateY(0); /* Make sure they are not hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Shorter transition for faster responsiveness */
+  }
+}
+
+/* The testimonial section will animate and be visible across all screen sizes */
+#testimonial {
+  opacity: 1; /* Ensure it is visible */
+  transform: translateY(0); /* Ensure it's in the correct position */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
